@@ -1,0 +1,7 @@
+{
+  "name": "EveryMundo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

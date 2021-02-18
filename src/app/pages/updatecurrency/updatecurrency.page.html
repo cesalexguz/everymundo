@@ -1,0 +1,114 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/config" class="backbutton"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Update Currency</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="currencyForm" (ngSubmit)="updateCurrency()" novalidate>
+                    <ion-item>
+                        <ion-label position="floating">Country</ion-label>
+                        <ion-input formControlName="country" type="text"></ion-input>
+                    </ion-item>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.country.errors?.required">
+                      Country is required.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.country.errors?.minlength">
+                      Country should be min 2 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.country.errors?.maxlength">
+                      Country should be max 50 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.country.errors?.pattern">
+                      Only letters are allowed.<br>
+                    </span>
+
+                    <ion-item>
+                        <ion-label position="floating">Symbol</ion-label>
+                        <ion-input formControlName="symbol" type="text"></ion-input>
+                    </ion-item>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.symbol.errors?.required">
+                      Symbol is required.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.symbol.errors?.minlength">
+                      Symbol should be min 2 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.symbol.errors?.maxlength">
+                      Symbol should be max 50 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.symbol.errors?.pattern">
+                      Only letters are allowed.<br>
+                    </span>
+
+                    <ion-item>
+                        <ion-label position="floating">Decimal separator</ion-label>
+                        <ion-input formControlName="decimalSeparator" type="text"></ion-input>
+                    </ion-item>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.decimalSeparator.errors?.required">
+                      Decimal Separator is required.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.decimalSeparator.errors?.minlength">
+                      Decimal Separator should be min 1 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.decimalSeparator.errors?.maxlength">
+                      Decimal Separator should be max 1 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.decimalSeparator.errors?.pattern">
+                      Only are allowed " , " or " . "<br>
+                    </span>
+
+                    <ion-item>
+                        <ion-label position="floating">Thousand separator</ion-label>
+                        <ion-input formControlName="thousandSeparator" type="text" required></ion-input>
+                    </ion-item>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.thousandSeparator.errors?.required">
+                      Thousand Separator is required.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.thousandSeparator.errors?.minlength">
+                      Thousand Separator should be min 1 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.thousandSeparator.errors?.maxlength">
+                      Thousand Separator should be max 1 chars long.<br>
+                    </span>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.thousandSeparator.errors?.pattern">
+                      Only are allowed " , " or " . "<br>
+                    </span>
+
+                    <ion-item>
+                        <ion-label>Show cents</ion-label>
+                        <ion-select formControlName="cents" placeholder="Select One">
+                            <ion-select-option [value]="true">Yes</ion-select-option>
+                            <ion-select-option [value]="false">No</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.cents.errors?.required">
+                      Cents option is required.
+                    </span>
+
+                    <ion-item>
+                        <ion-label>Show symbol before the price</ion-label>
+                        <ion-select formControlName="currencyBefore" placeholder="Select One">
+                            <ion-select-option [value]="true">Yes</ion-select-option>
+                            <ion-select-option [value]="false">No</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <span class="error error-danger" *ngIf="isSubmitted && errorControl.currencyBefore.errors?.required">
+                      Show symbol before the price option is required.
+                    </span>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-button type="submit ">Update Currency</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,29 @@
+ion-select {
+    color: #1767f1;
+    --placeholder-color: #1767f1;
+    --placeholder-opacity: 0.9;
+    max-width: 100% !important;
+}
+
+ion-searchbar {
+    --placeholder-color: #1767f1;
+    --placeholder-opacity: 0.8;
+    --icon-color: #1767f1;
+    color: #1767f1;
+}
+
+.icons {
+    text-align: right;
+}
+
+.title {
+    text-align: center;
+}
+
+.pencil {
+    color: #0e8b34;
+}
+
+.trash {
+    color: #ee1818;
+}

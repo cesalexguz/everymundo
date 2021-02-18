@@ -1,0 +1,24 @@
+.loading {
+    --background: #fff;
+    --spinner-color: #2f5a95;
+    color: #2f5a95;
+}
+
+.alert {
+    --background: #e5e5e5;
+}
+
+.error {
+    font-size: 0.9rem;
+    text-align: left;
+    padding: 0.4rem !important;
+    margin-left: 2%;
+    border: 1px solid transparent;
+    border-radius: 0.4rem;
+}
+
+.error-danger {
+    color: #a94442;
+    --background: #f2dede;
+    border-color: #ebccd1;
+}
